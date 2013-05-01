@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript" src="/js/Circle.js"></script>
+<script type="text/javascript">
+    var c = new Circle(300,200,100);
+    var el = /** @type {HTMLCanvasElement} */ document.getElementById('canvas');
+    var context = el.getContext('2d');
+    c.draw(context);
+</script>
+</body>
+</html>
