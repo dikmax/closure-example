@@ -1,11 +1,17 @@
+goog.provide('Circle');
+
+goog.require('Figure');
+
 /**
  * @constructor
+ * @extends Figure
  */
-var Circle = function (x, y, radius) {
+Circle = function (x, y, radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
 };
+goog.inherits(Circle, Figure);
 
 /**
  * @type {number}
@@ -25,6 +31,5 @@ Circle.prototype.radius = 0;
  */
 Circle.prototype.draw = function (context) {
     context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    context.strokeStyle = '#00000';
-    context.stroke();
+    goog.base(this, 'draw', context);
 };
